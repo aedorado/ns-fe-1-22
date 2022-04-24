@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="html,forms,newtonschool">
+    <meta name="description" content="This webpage contains information about html">
+    <meta name="author" content="Sachin Tendulkar">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" action="login.php">
+        <label for="firstname">First Name: </label>
+        <input size="30" maxlength="5" type="text" placeholder="Enter first name" id="firstname" name="firstname" required>
+        <br><br>
+        <label for="lastname">Last Name: </label>
+        <input value="XYZ" readonly type="text" placeholder="Enter last name" id="lastname" name="last-name">
+
+        <br><br> Password <input placeholder="Enter password" type="password" name="password">
+
+        <br><br>What are you learning now?
+        <input type="radio" value="html" name="learning" id="learning-html">HTML
+        <input type="radio" value="css" name="learning" id="learning-css">CSS
+        <input type="radio" value="js" name="learning" id="learning-js">JS
+        <input type="radio" value="react" name="learning" id="learning-react">React
+
+        <br><br>Which vehicle do you own?
+        <input type="checkbox" name="vehicle-car">Car
+        <input type="checkbox" name="vehicle-bike" value="bike">Bike
+
+        <input type="Button" value="Click me">
+
+        <br><br>Your favorite color is: <input type="color" name="color" id="color">
+
+        <br><input type="date" name="date" min="2021-03-01" max="2023-06-15">
+        <br>Email: <input type="email" name="email" disabled value="anurag@ns.com">
+        <br> Number <input type="number" min="-20" max="20" required>
+
+        <br><br>
+        What is your favorite color? <select name="fcolor" size="5" multiple>
+            <option value="red">Red</option>
+            <option value="blue" selected>Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+
+        <br><br><br>
+        <textarea name="about-me" rows="10" cols="25">
+
+        </textarea>
+
+        <input type="file" name="myfile">
+
+        <marquee behavior="" direction="">This is moving text</marquee>
+
+
+        <br><br><input type="reset">
+
+        <br><br><input type="submit" value="Send Data">
+    </form>
+</body>
+</html>
