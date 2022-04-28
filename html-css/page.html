@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <style>
 
         * {
-            font-family: tahoma;
+            font-family: 'Oswald', sans-serif;
         }
 
         p {
@@ -34,9 +38,24 @@
         }
 
         div {
-            color: black;
-            font-size: 8px;
+            font-size: 15px;
+            color: green;
             background-color: #FFFF00;
+            text-align: justify;
+            /* direction: rtl; */
+            vertical-align: text-bottom;
+            /* text-decoration-line: underline;
+            text-decoration-color: red;
+            text-decoration-style: wavy;
+            text-decoration-thickness: auto; */
+            text-decoration: underline red wavy 0.75px;
+            text-transform: capitalize;
+            /* text-indent: 50px; */
+            /* letter-spacing: 2px; */
+            /* line-height: 2; */
+            word-spacing: 10px;
+            text-shadow: 3px 3px 3px red, -3px -3px 1px violet;
+            /* text-align-last: justify; */
             /* border-width: 3px; */
             /* border-style: solid dotted dashed double; */
             /* border-style: solid dotted dashed; */
@@ -64,7 +83,7 @@
             width: 80%;
             min-width: 300px;
             max-width: 400px;
-            height: 70px;
+            /* height: 70px; */
             padding: 15px 5px 0px 20px;
         }
 
@@ -106,21 +125,47 @@
             /* background: #36c221 url('images/win.png') repeat-x scroll left center; */
             /* color image repeat attachment position */
         }
+
+        a {
+            text-decoration: none;
+        }
         
     </style>
 </head>
 <body>
+    <i class="fas fa-cloud"></i>
+    <i class="fa-solid fa-user"></i>
+
+  <!-- regular style -->
+  <i class="fas fa-regular fa-user"></i>
+
+  <!-- light style -->
+  <i class="fas fa-light fa-user"></i>
+
+  <!-- duotone style -->
+  <i class="fas fa-duotone fa-user"></i>
+
+  <!-- all new thin style -->
+  <i class="fas fa-thin fa-user"></i>
+
+  <!--brand icon-->
+  <i class="fa-brands fa-github-square"></i>
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
-    <div id="main-div">
+    <!-- <div id="main-div">
         <p id="para-1">Paragraph 1</p>
         <p style="border: 2px solid red;">
             This is my paragraph
         </p>
         <p id="para-3">Content</p>
+    </div> -->
+    <div>Ut sed lectus iaculis, posuere turpis ut, pellentesque tellus. Nulla facilisi. In porta iaculis purus vitae venenatis. Vestibulum vehicula nunc et felis vulputate, euismod pellentesque justo molestie. Quisque fringilla ornare ipsum sed vehicula. Curabitur et odio non risus lacinia congue. Nulla metus nulla, volutpat vitae tempor sed, facilisis a lacus. Etiam urna sem, scelerisque in pulvinar ut, semper vitae neque. Nulla feugiat velit ac. This is my very last line in the paragraph. </div>
+    <a href="http://google.com">Link is here</a>
+    <div class="no-margin">
+        <p>Ut sed lectus iaculis, posuere turpis ut, pellentesque tellus. Nulla facilisi.</p>
+        <p>Ut sed lectus iaculis, posuere turpis ut, pellentesque tellus. Nulla facilisi.</p>
+        Div 2
     </div>
-    <div>Div 1Div 1Div 1Div 1Div 1Div 1Div 1Div 1Div 1</div>
-    <div class="no-margin">Div 2</div>
     <div id="div3" class="no-margin">Div 3</div>
     <div>Div 4</div>
     <div>Div 1</div>
