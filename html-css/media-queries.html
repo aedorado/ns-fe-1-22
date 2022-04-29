@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .example {
+            padding: 20px;
+            color: black;
+            background-color: antiquewhite;
+            /* box-shadow:  5px 5px 2px red, 10px 10px 5px blue; */
+        }
+
+        .example {
+            box-shadow:  0px 0px 4px black;
+        }
+
+        /* @media screen and (min-width: 1000px) {
+            .example {
+                background-color: pink;
+            }
+        }
+
+        @media screen and (min-width: 800px) and (max-width:1000px) {
+            .example {
+                background-color: aqua;
+            }
+
+            body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            .example {
+                background-color: cadetblue;
+                display: none;
+            }
+
+            .ex2 {
+
+            }
+
+            body {
+                font-family: 'Courier New', Courier, monospace;
+            }
+        } */
+    </style>
+
+    <!-- 
+        CSS resuse - different
+        CSS file only use - same
+     -->
+</head>
+<body>
+    
+    <!-- 
+        < 800px -> default
+        800-1000px -> aqua
+        >1000px -> pink
+     -->
+
+    
+    <div class="example">
+        This div is controlled by media query, you can change the screen size to observe this in action here! 
+    </div>
+
+
+    <!-- Media query defines what CSS should be used when, according to screen size -->
+
+
+</body>
+</html>

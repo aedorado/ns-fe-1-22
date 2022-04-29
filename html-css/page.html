@@ -37,24 +37,25 @@
             font-size: 16px;
         }
 
-        div {
-            font-size: 15px;
-            color: green;
-            background-color: #FFFF00;
-            text-align: justify;
+        /* div {
+            /* display: none; */
+            /* font-size: 15px; */
+            /* color: green; */
+            /* background-color: #FFFF00; */
+            /* text-align: justify; */
             /* direction: rtl; */
-            vertical-align: text-bottom;
+            /* vertical-align: text-bottom; */
             /* text-decoration-line: underline;
             text-decoration-color: red;
             text-decoration-style: wavy;
             text-decoration-thickness: auto; */
-            text-decoration: underline red wavy 0.75px;
-            text-transform: capitalize;
+            /* text-decoration: underline red wavy 0.75px; */
+            /* text-transform: capitalize; */
             /* text-indent: 50px; */
             /* letter-spacing: 2px; */
             /* line-height: 2; */
-            word-spacing: 10px;
-            text-shadow: 3px 3px 3px red, -3px -3px 1px violet;
+            /* word-spacing: 10px; */
+            /* text-shadow: 3px 3px 3px red, -3px -3px 1px violet; */
             /* text-align-last: justify; */
             /* border-width: 3px; */
             /* border-style: solid dotted dashed double; */
@@ -67,7 +68,7 @@
             /* border: 1px solid red; */
             /* border-bottom: 1px solid yellow; */
             /* border-top: 4px solid green; */
-            border: 2px solid green;
+            /* border: 2px solid green; */
             /* border-radius: 250px; */
             /* border-bottom-right-radius: 6px;
             border-bottom-left-radius: 10px;
@@ -80,12 +81,12 @@
             margin-left: 25px; */
             /* margin-top: 5px; */
             /* margin: 5px; */
-            width: 80%;
-            min-width: 300px;
-            max-width: 400px;
+            /* width: 80%; */
+            /* min-width: 300px; */
+            /* max-width: 400px; */
             /* height: 70px; */
-            padding: 15px 5px 0px 20px;
-        }
+            /* padding: 15px 5px 0px 20px; */
+        /* } */ */
 
         /* .no-margin {
            margin: 0px; 
@@ -129,10 +130,127 @@
         a {
             text-decoration: none;
         }
+
+        li {
+            display: inline;
+        }
+
+        span {
+            display: block;
+        }
         
+        .positioned {
+            position: relative;
+            left: -15px;
+            top: 10px;
+            /* top: 10%;
+            /* left: 15%; */
+            /* width: 100%; */ 
+        }
+
+        .rel {
+            width: 300px;
+            height: 200px;
+            border: 3px solid red;
+            position: relative;
+        }
+
+        .rel2 {
+            width: 250px;
+            height: 150px;
+            position: relative;
+            border: 2px solid blue;
+        }
+
+        .abs {
+            width: 175px;
+            height: 100px;
+            border: 2px solid green;
+            position: absolute;
+            top: 0px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 10px;
+            border: 2px solid red;
+            background-color: yellow;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            opacity: 0.7;
+        }
+
+        .center {
+            position: absolute;
+            background-color: #a2a2a2;
+            opacity: 0.7;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .ovf {
+            background-color: #FFFF00;
+            width: 100px;
+            height: 40px;
+            overflow: auto;
+        }
+
     </style>
 </head>
 <body>
+
+    <div class="ovf">
+        There is some content in this webpage. what to do with this content here? 
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+        <img src="nature.jpg" height="200" alt="">
+        <div class="center">
+            Centered
+        </div>
+    </div>
+
+    <ul>
+        <li>li 1</li>
+        <li>li 2</li>
+        <li>li 3</li>
+        <li>li 4</li>
+        <li>li 5</li>
+    </ul>
+
+    <div class="sticky">
+        This is sticky
+    </div>
+
+    <div class="rel">
+        This div has postition: relative
+        <div class="rel2">
+            This is div rel2
+            <div class="abs">
+                This div has a position: absolute
+            </div>
+        </div>
+    </div>
+
+    <!-- An element with position: absolute is positined wrt
+    its nearest positioned ancestor (& not relavite to its original position) -->
+
+    <div class="positioned">
+        This div is placed here
+    </div>
+
+    <span>Span 1</span><span>Span 2</span><span>Span 3</span>
+    <br><br><br>
     <i class="fas fa-cloud"></i>
     <i class="fa-solid fa-user"></i>
 
