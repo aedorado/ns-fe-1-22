@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .example {
+        /* .example {
             padding: 20px;
             color: black;
             background-color: antiquewhite;
             /* box-shadow:  5px 5px 2px red, 10px 10px 5px blue; */
-        }
+        /* } */
 
-        .example {
-            box-shadow:  0px 0px 4px black;
-        }
+        /* .example { */
+            /* box-shadow:  0px 0px 4px black; */
+        /* } */ 
+
+        /* 
+        x, y
+        */
 
         /* @media screen and (min-width: 1000px) {
             .example {
@@ -47,6 +51,126 @@
                 font-family: 'Courier New', Courier, monospace;
             }
         } */
+
+        /* img {
+            position: absolute;
+            z-index: 1;
+        }
+
+        p {
+            background-color: yellow;
+        } */
+/* 
+        .container {
+            position: relative;
+        }
+
+        .first {
+            position: relative;
+            border: 2px solid black;
+            height: 100px;
+            margin: 20px;
+            z-index: 3;
+        }
+
+        .second {
+            background-color: lightgray;
+            height: 60px;
+            width: 60%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 3;
+        }
+
+        .third {
+            position: absolute;
+            background: cyan;
+            width: 30%;
+            left: 200px;
+            top: -10px;
+            height: 150px;
+            z-index: 3;
+        } */
+
+        /* div p {
+            background-color: yellow;
+        }
+
+        div span {
+            background-color: red;
+        } */
+/* 
+        div > p {
+            background-color: aqua;
+        } */
+
+        /* div + p {
+            background-color: blue;
+        } */
+
+        /* div ~ p {
+            background-color: lightcoral;
+        } */
+
+        /* div {
+            color: black;
+            transition: all 2s;
+        }
+
+        div:hover {
+            color: white;
+            background-color: brown;
+        } */
+
+        input:focus {
+            background-color: yellow;
+        }
+
+        a:link {
+            color: black;
+        }
+
+        a:visited {
+            color: brown;
+        }
+
+        a:hover {
+            color: yellow;
+        }
+
+        a:active {
+            color: tomato;
+        }
+
+        /* p {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        div:hover+p {
+            display: block;
+            background-color: brown;
+        } */
+
+        /* Pseudo elements are used to style sepecified parts of an element */
+
+        p::first-line {
+            color: #06e3af;
+        }
+
+        P::first-letter {
+            color: red;
+            font-size: 24px;
+        }
+
+        p::after {
+            content: 'The paragraph end now';
+            color: aqua;
+            
+        }
+
     </style>
 
     <!-- 
@@ -55,6 +179,88 @@
      -->
 </head>
 <body>
+    <!-- Do not put p inside p or div inside p  -->
+    <!-- img, a, span, b, u, i -->
+    <!-- Combinators -->
+    <!-- Descendant Selector -->
+    <!-- Child Selector -->
+    <!-- Adjacent Sibling Selector -->
+    <!-- General Sibling Selector -->
+
+    <!-- Pseudo Classes -->
+    <!-- A pseudo class defines a special state of an element
+        - element has mouse over it
+        - element is in focus (input)
+        - link visited, unvisited etc.
+    -->
+
+    <!-- <div>
+        HOVER OVER ME 
+    </div> -->
+    <p>
+        This is displayed when you hover over the div. THsi si ssome random praragraph here which is too long and take more than one line
+    </p>
+
+    <p>
+        This is displayed when you hover over the div. 
+    </p>
+    
+
+    <!-- <div>
+        Hover over me
+    </div>
+    <div>
+        Hover over me too
+    </div> -->
+
+    <!-- <br>
+    <a href="http://myntra.com">This is twitter.com</a>
+    <br>
+    <br>
+    <input type="text"> -->
+
+    <!-- <p>This is first para</p>
+    <div>
+        <p>P1</p>
+        <p>P2</p>
+        <section>
+            <p>P3.1</p>
+            <p>P3.2</p>
+            <p>3.3</p>
+            <div>
+                <p>3.4.1</p>
+                <p>3.4.2</p>
+            </div>
+            <p>This p has a previous div sibling</p>
+            <p>This is para after a div & para</p>
+        </section>
+        <p>P4</p>
+        <p>P5</p>
+    </div>
+    <div>This is not div Descendant
+        <span>This is span in div</span>
+    </div>
+    <p>This is a para after a div</p>
+    <div>
+        <p>This is p in divs</p>
+    </div> -->
+
+
+
+    <!-- <div class="container">
+        <div class="first">
+            First
+        </div>
+        <div class="second">
+            Second
+        </div>
+        <div class="third">
+            Third
+        </div>
+    </div> -->
+
+    <!-- <img src="images/nature-1.jpg" width="450px" height="400px">
+    <p>This text is on this webpage This text is on this webpage This text is on this webpage This text is on this webpage</p> -->
     
     <!-- 
         < 800px -> default
@@ -63,9 +269,9 @@
      -->
 
     
-    <div class="example">
+    <!-- <div class="example">
         This div is controlled by media query, you can change the screen size to observe this in action here! 
-    </div>
+    </div> -->
 
 
     <!-- Media query defines what CSS should be used when, according to screen size -->
