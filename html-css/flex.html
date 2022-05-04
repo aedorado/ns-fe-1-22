@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+        #flex-container {
+            background-color: aqua;
+            display: flex;
+            height:500px;
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; */
+            /* justify-content: space-around; */
+            /* align-items: center; */
+            /* 
+            jc -> ma
+            ai -> ca
+            */
+            /* flex-direction: column-reverse; */
+            /* flex-wrap: wrap-reverse; */
+            /* flex-flow: column wrap-reverse; */
+            /* align-content: aligns the flex lines 
+            along the cross axis */
+            /* align-content: space-between; */
+            /* justify-content: center; */
+            /* 
+            nowrap - single line
+            wrap - multiline
+            wrap-reverse = multiline + revese direction of CA
+            */
+        }
+
+        #flex-container > div {
+            background-color: lightgray;
+            margin: 10px;
+            padding: 20px;
+            font-size: 24px;
+            height: 30px;
+            width: 30px;
+        }
+
+        #id2 {
+            order: 2;
+        }
+
+        #id4 {
+            order: -1;
+        }
+
+        #id5 {
+            order: 3;
+        }
+
+        .order2 {
+            order: 1
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="flex-container">
+        <div>1</div>
+        <div id="id2">2</div>
+        <div>3</div>
+        <div id="id4">4</div>
+        <div id="id5">5</div>
+        <div>6</div>
+        <div>7</div>
+    </div>
+
+    <!-- Flex 
+    It makes it easier to laout out items on the webpage & makes it easier to make the webpage responsive
+    -->
+</body>
+</html>

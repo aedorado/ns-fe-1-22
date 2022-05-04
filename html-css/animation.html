@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .animated {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            animation-name: perc;
+            animation-duration: 2s;
+            text-align: center;
+            /* animation-delay: 5s; */
+            /* animation-iteration-count: 5; */
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-direction: reverse;
+        }
+
+        @keyframes example {
+            from { background-color: red; }
+            to { background-color: yellow; }
+        }
+
+        @keyframes perc {
+            0% { background-color: red; }
+            33% { background-color: yellow; }
+            50% { font-size: 4px; }
+            66% { background-color: green; }
+            100% { 
+                /* font-size: 24px; */
+                background-color: red; 
+            }
+        }
+
+        .animated2 {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            position: relative;
+            animation: an2 2s ease 5s 3 normal forwards;
+            /* animation-name: an2;
+            animation-duration: 3s;
+            /* animation-iteration-count: infinite; */
+            /* animation-direction:normal; */
+            /* animation-fill-mode: forwards; */ 
+            /* animation-direction:reverse; */
+            /* animation-direction:alternate; */
+            /* animation-direction: alternate-reverse; */
+            /* animation-timing-function: ease; */
+            /* animation-timing-function: ease-in; */
+            /* animation-timing-function: ease-out; */
+        }
+
+        @keyframes an2 {
+            0% { background-color: red; left: 0; top: 0; }
+            25% { background-color: red; left: 100px; top: 0; }
+            50% { background-color: green; left: 100px; top: 100px; }
+            75% { background-color: red; left: 0; top: 100px; }
+            100% { background-color: yellow; left: 0; top: 0; }
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <!-- <div class="animated">Text</div> -->
+
+    <div class="animated2">Text</div>
+
+</body>
+</html>
