@@ -38,7 +38,31 @@ let b = 5;
 // console.log(a > b);
 // console.log(a <= b);
 // console.log(a != 10);
-console.log(a == 9);
+// console.log(a == 9);
+
+// console.log(9 == "9");
+// console.log(9 === "9");
+// console.log("9" === "9");
+// === -> true if type & value are same
+// === -> false if either type of value is not the same
+
+// console.log(9 != 8);
+// console.log(9 != 9);
+
+// != does not take the type in consideration
+// console.log(9 != "9");  // 9 != 9
+// console.log(9 !== "9");  // 9 !== "9"
+
+// == -> ===
+// != -> !==
+
+// These operators compare only value & not type
+// != 
+// ==
+
+// These operators compare both the value & the types
+// !==
+// === 
 
 // >
 // <
@@ -47,12 +71,75 @@ console.log(a == 9);
 // !=
 // ==
 
+// 9 == "9" -> false
+// 9 == "9" -> 9 == 9 / "9" == "9" (JS says for me type is not relevant with ==)
+
+// Normally -> 9 != "9" -> true
+// In JS   ->  9 != "9" -> 9 != 9 -> false
+
+// == -> ===
+// != -> !==
+
+// == 
+// != 
+
 // !==
 // ===
 
 // &&
 // ||
 // !
+
+// && -> returns false if any of the conditions are false Or falsy
+
+// console.log(true && true);
+// console.log(true && false);
+// console.log(false && true);
+// console.log(false && false);
+
+
+// console.log(true || true);
+// console.log(true || false);
+// console.log(false || true);
+// console.log(false || false);
+
+// console.log(!true);
+// console.log(!false);
+
+// false
+
+// Falsy Values are treated as false in conditions
+// false
+// 0
+// null
+// undefined
+// NaN
+// ""
+
+// Truthy values are treated as true in conditions
+// Any value that is not a falsy value
+// a, b, c, d, e, f, aa, ab, ac, aaa, aaaa, 
+
+// undefined
+// "undefined"
+
+
+if (100) {   
+    console.log("inside if");
+} else {
+    console.log("inside else");
+}
+
+// if (100 || "dog" || "cat" || false) -> if (100) -> if (true) 
+// if (undefined && true && null && true) -> if (undefined) -> if (false) 
+
+// // console.log(undefined && true && null && true);
+// console.log(100 || "dog" || "cat" || false);
+
+// && -> always returns the first falsy value. if there is not falsy value then it returns true
+// || -> always returns the first truthy value. if there is no truthy value then it returns false
+
+
 
 // typeof
 
