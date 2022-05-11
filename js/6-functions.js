@@ -152,6 +152,7 @@ function add (x = 8, y, z = 0) {
 // currying
 // setTimeout
 // setInterval
+// Ananymous Function
 // IIFE
 // HOF
 // Hoisting
