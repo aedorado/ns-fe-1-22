@@ -122,15 +122,8 @@ arr.pop();
 // console.log(Array.isArray(arr));
 
 
-// SPLICE
-// SLICE
-// SORTING
-// 
 
 
-
-// roz ka roz - revise
-// 
 
 
 
