@@ -28,6 +28,19 @@
 - Creating HTML Elements
 - Events bubbling & capture
 
+## BOM
+- navigator
+- history
+- window
+
+## Promises
+
+## Async
+- JSON
+- AJAX
+- fetch
+- Async/await
+
 ## Functions:
 - Closure
 - Currying
