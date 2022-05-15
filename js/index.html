@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Examples</title>
 
+    <style>
+        #mo {
+            background-color: #D94;
+            width: 150px;
+            height: 20px;
+            padding: 20px;
+        }
+        .dc {
+            background-color: #F1D;
+            width: 150px;
+            height: 20px;
+            padding: 20px;
+        }
+    </style>
+
 </head>
-<body>
+
+
+<body onload="showloaded()">
     <h1 class="para"  id="head-1">Heading 1</h1>
+    <h2 onclick="h2Clicked(this)">Head 2</h2>
     <p id="para-1" class="para">Para</p>
     <p id="para-2" class="para">Para</p>
     <div>
@@ -17,6 +35,24 @@
         <p id="para-3" class="para">Para</p>
     </div>
     
+    <img id="nature-img" src="img/nature.jpg" />
+
+    <p id="current-time"></p>
+
+    <!-- <button onclick="showTime()">Show Time</button> -->
+    <button id="button-2">Show Time 2</button>
+    <br>
+    <input type="text" id="fname">
+
+    <!-- <div id="mo" 
+        onmouseover="mOver(this)"
+        onmouseout="mOut(this)"
+    >Mouseover</div> -->
+
+    <div id="test-div" class="dc">
+        Test
+    </div>
+
 </body>
 
 <script src="11.dom.js"></script>

@@ -1,4 +1,4 @@
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 // Car -> white, 4 wheel
 // start, stop
 
@@ -21,6 +21,10 @@ let car = {
     checkFuel: function() { 
         console.log(`Fuel available: ${this.fuel}`); 
     }
+};
+
+for (const x in car) {
+    console.log(x, car[x]);
 }
 
 let fakeCar = {
@@ -37,7 +41,7 @@ let obj1 = {
     }
 }
 
-obj1.px();
+// obj1.px();
 
 
 // let f = () => {
