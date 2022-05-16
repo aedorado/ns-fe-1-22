@@ -14,17 +14,32 @@
             padding: 20px;
         }
         .dc {
-            background-color: #F1D;
-            width: 150px;
-            height: 20px;
+            background-color: tomato;
+            color: white;
+            font-size: 24px;
+            width: 250px;
+            height: 30px;
             padding: 20px;
         }
+
+        #div1, #div2 {
+            padding: 50px;
+            background-color: aqua;
+            margin: 20px;
+        }
+
+        #p1, #p2 {
+            background-color: coral;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
     </style>
 
 </head>
 
 
-<body onload="showloaded()">
+<body id="body" onload="showloaded()">
     <h1 class="para"  id="head-1">Heading 1</h1>
     <h2 onclick="h2Clicked(this)">Head 2</h2>
     <p id="para-1" class="para">Para</p>
@@ -52,6 +67,32 @@
     <div id="test-div" class="dc">
         Test
     </div>
+
+    <button id="remove-mm">Remove mousemove event</button>
+
+
+    <div id="div1">
+        Bubbling
+        <p id="p1">
+
+        </p>
+    </div>
+
+    <div id="div2">
+        Capture
+        <p id="p2">
+
+        </p>
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <h1>BOM</h1>
+
 
 </body>
 

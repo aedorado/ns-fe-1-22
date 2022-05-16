@@ -1,3 +1,4 @@
+console.log(document);
 // https://developer.mozilla.org/en-US/docs/Web/Events#event_listing
 // console.log(document.getElementById('head-1'));
 
@@ -77,7 +78,7 @@ function showTime() {
 document.getElementById('button-2').onclick = showTime;
 
 function showloaded() {
-    console.log('Doc loaded!');
+    // console.log('Doc loaded!');
 }
 
 function capitalize() {
@@ -113,10 +114,60 @@ document.getElementById('fname').onchange = capitalize;
 
 // addEventListener(event, handler, useCapture -> optional)
 
+
+// clickable only once
+// once when we click -> alert
+// after that does not do anything
+
 let testDiv = document.getElementById('test-div');
-testDiv.addEventListener('click', function(e) {
-    e.target.innerHTML = 'I was clicked!';
+function randomNum() {
+    testDiv.innerHTML = Math.random();
+}
+function randomNumLog() {
+    console.log(Math.random());
+}
+testDiv.addEventListener('mousemove', randomNum);
+testDiv.addEventListener('mousemove', randomNumLog);
+
+document.getElementById('remove-mm').addEventListener('click', function() {
+    testDiv.removeEventListener('mousemove', randomNumLog);
 });
+
+// 3rd argument is for useCapture
+// true -> event capture
+// false -> event bubbling
+
+// event bubling -> event flows from element to top
+// event capture -> event flows from top to element
+
+document.getElementById('p1').addEventListener('click', function() {
+    console.log('P1 clicked!');
+}, false);
+
+document.getElementById('div1').addEventListener('click', function() {
+    console.log('DIV1 clicked!');
+}, false);
+
+
+
+document.getElementById('p2').addEventListener('click', function() {
+    console.log('P2 clicked!');
+}, true);
+
+document.getElementById('div2').addEventListener('click', function() {
+    console.log('Div2 clicked');
+}, true);
+
+// document.getElementById('body').addEventListener('click', function() {
+//     console.log('BODY clicked!');
+// }, true);
+
+
+
+// let testDiv = document.getElementById('test-div');
+// testDiv.addEventListener('click', function(e) {
+//     e.target.innerHTML = 'I was clicked!';
+// });
 // testDiv.addEventListener('click', function() {
 //     console.log('div clicked 2');
 // });
@@ -129,12 +180,30 @@ testDiv.addEventListener('click', function(e) {
 //     document.getElementById('test-div').innerHTML = Math.random();
 // });
 
-window.addEventListener('keypress', function(event) {
-    console.log(event.key);
+// window.addEventListener('keypress', function(event) {
+//     console.log(event.key);
+//     document.getElementById('test-div').innerHTML += event.key;
+// });
 
-    document.getElementById('test-div').innerHTML += event.key;
 
-});
+
+// removeEventListeners
+// event bubbling & capture
+// BOM
+
+// DOM Nodes
+// Creating DOM Nodes
+
+// Promises
+// Async JS
+
+// Objects, Ineritance, OOJS
+
+// closures, currying, hoisting
+// setInterval, setTimeout
+// JS execution context
+
+// Project
 
 
 

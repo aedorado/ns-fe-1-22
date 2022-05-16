@@ -3,7 +3,6 @@
 // start, stop
 
 // object can have both properties & methods
-
 let car = {
     fuelCap: 100,   // total max fuel allowed
     fuel: 50,       // fuel right now
@@ -142,3 +141,6 @@ let obj1 = {
 // Dom manipuation
 // events
 
+// console.log(document);
+// console.log(window);
+console.log(os);

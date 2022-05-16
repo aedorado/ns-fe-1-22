@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>BOM</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p id="p1">
+    </p>
+</body>
+
+<script>
+    // BOM allows JS to use broswer specific features
+    // BOM is not a part of JS
+    // BOM is provided as API by the browser
+
+    // JS? -> ECMAScript 
+    // ECMA is a body that gives the standart of JS
+    // document -> is part of BOM & not JS
+
+    setInterval(() => {
+        document.getElementById('p1').innerHTML = new Date();
+    }, 1000);
+
+    console.log(window);
+
+    console.log(document.getElementById('p1'));
+    console.log(window.document.getElementById('p1'));
+
+    var x = 10; // var
+    console.log(x);
+    console.log(window.x);
+
+    console.log('innerheight = ', window.innerHeight);
+    console.log('innerwidth = ', window.innerWidth);
+
+    console.log(window.screen);
+
+    // _ _ _ _ _ _ _ _ -> 2^8 = 256
+    // 0 1 0 1 0 0 1 1
+
+    console.log(window.location);
+    console.log(window.location.href);
+    console.log(window.location.hostname);
+
+    // window.location.reload();
+    // window.location.assign('https://www.google.com');
+
+    // window.alert('this is an alert');
+    // let y = window.prompt('Whats your name?');
+    // console.log('prompt input = ', y);
+
+    // let z = confirm('Are you good?');
+    // console.log("confirm : ", z);
+
+    console.log(window.history);
+
+    console.log(window.navigator);
+
+
+</script>
+
+</html>
