@@ -1,209 +1,283 @@
-console.log(document);
-// https://developer.mozilla.org/en-US/docs/Web/Events#event_listing
-// console.log(document.getElementById('head-1'));
 
-// console.log(document.getElementById('para-1'));
-
-// head1.innerHTML = 'Updated by JS!! :)'
-
-// DOM Selectors
-let head1 = document.getElementById('head-1');
-// console.log(head1);
-
-let ps = document.getElementsByTagName('p');
-ps[0].innerHTML = "123";
-ps[1].innerHTML = "345";
-ps[2].innerHTML = "567";
-// ps.innerHTML = 'adlfls';
-
-let ebc = document.getElementsByClassName('para');
-// console.log(ebc);
-
-// CSS selectors
-let csr = document.querySelector('div > p');
-let csrAll = document.querySelectorAll('div > p');
-
-csrAll = document.querySelectorAll('.para');
-// console.log(csrAll);
-
-// console.log(csrAll);
-
-// csrAll.forEach(element => {
-//     element.innerHTML = 'QSA';
-//     // console.log(element);
-// });
-
-// console.log(ps);
-
-let nimg = document.getElementById('nature-img');
-// console.log(nimg);
-nimg.src = "img/win1.png";
-// nimg.alt = "alt text here";
-nimg.id = "id-by-js";
-
-
-// nimg = document.getElementById('id-by-js');
-// console.log(nimg);
-
-let time = document.getElementById('current-time');
-// time.innerHTML = `<b>${new Date()}</b>`;
-// console.log(time);
-
-time.style.border = "1px solid red";
-time.style.borderRadius = "4px";
-
-// document.write('hello!');
-
-function h2Clicked(ele) {
-    console.log(ele);
-    ele.innerHTML = 'Continue;';
-}
-
-// show a button on screen
-// when button is clicked
-// we want to show the current time 
-// inside #current-time paragraph
-
-let show = true 
-function showTime() {
-    if (show) {
-        let d = new Date();
-        document.getElementById('current-time').innerHTML = d;
-    } else {
-        document.getElementById('current-time').innerHTML = "";
+function makeSizer(size) {
+    return function() {
+        document.body.style.fontSize = size + 'px';
     }
-    show = !show;
 }
 
-document.getElementById('button-2').onclick = showTime;
+let ms12 = makeSizer(12);
+console.log(ms12);
 
-function showloaded() {
-    // console.log('Doc loaded!');
+document.getElementById('s12').onclick = ms12;
+document.getElementById('s18').onclick = makeSizer(18);
+document.getElementById('s24').onclick = makeSizer(24);
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+function add(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        }
+    }
 }
+add(1)(2)(3);
 
-function capitalize() {
-    let ii = document.getElementById('fname');
-    ii.value = ii.value.toUpperCase();
-    console.log(ii.value);
-}
 
-document.getElementById('fname').onchange = capitalize;
 
-// function mOver(ele) {
+
+
+
+
+
+
+
+
+
+const d = document.createElement("div");
+d.setAttribute('id', 'div1');
+d.setAttribute('class', 'div-class');
+
+const para = document.createElement("p");
+const pTextNode = document.createTextNode("this is a text node 1");
+para.appendChild(pTextNode);
+d.appendChild(para);
+
+const para1 = document.createElement("p");
+const pTextNode1 = document.createTextNode("this is a text node 2");
+para1.appendChild(pTextNode1);
+d.appendChild(para1);
+
+document.getElementById("body").appendChild(d);
+
+const input = document.createElement('input');
+input.setAttribute('type', 'number');
+
+// d.appendChild(input);
+// insertBefore(element to insert, the element before which to insert)
+d.insertBefore(input, para1);
+// document.getElementById('div1').appendChild(para);
+
+let img = document.getElementById('nature-img');
+console.log(img);
+img.remove();
+
+
+let parent = document.getElementById('div3');
+let child = document.getElementById('para-2');
+parent.removeChild(child);
+
+
+
+
+// console.log(document);
+// // https://developer.mozilla.org/en-US/docs/Web/Events#event_listing
+// // console.log(document.getElementById('head-1'));
+
+// // console.log(document.getElementById('para-1'));
+
+// // head1.innerHTML = 'Updated by JS!! :)'
+
+// // DOM Selectors
+// let head1 = document.getElementById('head-1');
+// // console.log(head1);
+
+// let ps = document.getElementsByTagName('p');
+// ps[0].innerHTML = "123";
+// ps[1].innerHTML = "345";
+// ps[2].innerHTML = "567";
+// // ps.innerHTML = 'adlfls';
+
+// let ebc = document.getElementsByClassName('para');
+// // console.log(ebc);
+
+// // CSS selectors
+// let csr = document.querySelector('div > p');
+// let csrAll = document.querySelectorAll('div > p');
+
+// csrAll = document.querySelectorAll('.para');
+// // console.log(csrAll);
+
+// // console.log(csrAll);
+
+// // csrAll.forEach(element => {
+// //     element.innerHTML = 'QSA';
+// //     // console.log(element);
+// // });
+
+// // console.log(ps);
+
+// let nimg = document.getElementById('nature-img');
+// // console.log(nimg);
+// nimg.src = "img/win1.png";
+// // nimg.alt = "alt text here";
+// nimg.id = "id-by-js";
+
+
+// // nimg = document.getElementById('id-by-js');
+// // console.log(nimg);
+
+// let time = document.getElementById('current-time');
+// // time.innerHTML = `<b>${new Date()}</b>`;
+// // console.log(time);
+
+// time.style.border = "1px solid red";
+// time.style.borderRadius = "4px";
+
+// // document.write('hello!');
+
+// function h2Clicked(ele) {
 //     console.log(ele);
-//     ele.innerHTML = 'Mouse is over me';
+//     ele.innerHTML = 'Continue;';
 // }
 
-// function mOut(ele) {
-//     ele.innerHTML = 'Mouse out';
+// // show a button on screen
+// // when button is clicked
+// // we want to show the current time 
+// // inside #current-time paragraph
+
+// let show = true 
+// function showTime() {
+//     if (show) {
+//         let d = new Date();
+//         document.getElementById('current-time').innerHTML = d;
+//     } else {
+//         document.getElementById('current-time').innerHTML = "";
+//     }
+//     show = !show;
 // }
 
-// window.onkeypress = function () {
-//     console.log('key pressed');
+// document.getElementById('button-2').onclick = showTime;
+
+// function showloaded() {
+//     // console.log('Doc loaded!');
 // }
 
-// let f = capitalize;
-// let g = capitalize();
-
-// function x() {
-//     return 1;
+// function capitalize() {
+//     let ii = document.getElementById('fname');
+//     ii.value = ii.value.toUpperCase();
+//     console.log(ii.value);
 // }
 
-// let f = x;
-// let g = x();
+// document.getElementById('fname').onchange = capitalize;
 
-// addEventListener(event, handler, useCapture -> optional)
+// // function mOver(ele) {
+// //     console.log(ele);
+// //     ele.innerHTML = 'Mouse is over me';
+// // }
 
+// // function mOut(ele) {
+// //     ele.innerHTML = 'Mouse out';
+// // }
 
-// clickable only once
-// once when we click -> alert
-// after that does not do anything
+// // window.onkeypress = function () {
+// //     console.log('key pressed');
+// // }
 
-let testDiv = document.getElementById('test-div');
-function randomNum() {
-    testDiv.innerHTML = Math.random();
-}
-function randomNumLog() {
-    console.log(Math.random());
-}
-testDiv.addEventListener('mousemove', randomNum);
-testDiv.addEventListener('mousemove', randomNumLog);
+// // let f = capitalize;
+// // let g = capitalize();
 
-document.getElementById('remove-mm').addEventListener('click', function() {
-    testDiv.removeEventListener('mousemove', randomNumLog);
-});
+// // function x() {
+// //     return 1;
+// // }
 
-// 3rd argument is for useCapture
-// true -> event capture
-// false -> event bubbling
+// // let f = x;
+// // let g = x();
 
-// event bubling -> event flows from element to top
-// event capture -> event flows from top to element
-
-document.getElementById('p1').addEventListener('click', function() {
-    console.log('P1 clicked!');
-}, false);
-
-document.getElementById('div1').addEventListener('click', function() {
-    console.log('DIV1 clicked!');
-}, false);
+// // addEventListener(event, handler, useCapture -> optional)
 
 
-
-document.getElementById('p2').addEventListener('click', function() {
-    console.log('P2 clicked!');
-}, true);
-
-document.getElementById('div2').addEventListener('click', function() {
-    console.log('Div2 clicked');
-}, true);
-
-// document.getElementById('body').addEventListener('click', function() {
-//     console.log('BODY clicked!');
-// }, true);
-
-
+// // clickable only once
+// // once when we click -> alert
+// // after that does not do anything
 
 // let testDiv = document.getElementById('test-div');
-// testDiv.addEventListener('click', function(e) {
-//     e.target.innerHTML = 'I was clicked!';
-// });
-// testDiv.addEventListener('click', function() {
-//     console.log('div clicked 2');
-// });
-// testDiv.addEventListener('mouseover', function() {
-//     console.log('mouse over me.. ')
-// });
+// function randomNum() {
+//     testDiv.innerHTML = Math.random();
+// }
+// function randomNumLog() {
+//     console.log(Math.random());
+// }
+// testDiv.addEventListener('mousemove', randomNum);
+// testDiv.addEventListener('mousemove', randomNumLog);
 
-
-// window.addEventListener('resize', function() {
-//     document.getElementById('test-div').innerHTML = Math.random();
+// document.getElementById('remove-mm').addEventListener('click', function() {
+//     testDiv.removeEventListener('mousemove', randomNumLog);
 // });
 
-// window.addEventListener('keypress', function(event) {
-//     console.log(event.key);
-//     document.getElementById('test-div').innerHTML += event.key;
-// });
+// // 3rd argument is for useCapture
+// // true -> event capture
+// // false -> event bubbling
+
+// // event bubling -> event flows from element to top
+// // event capture -> event flows from top to element
+
+// document.getElementById('p1').addEventListener('click', function() {
+//     console.log('P1 clicked!');
+// }, false);
+
+// document.getElementById('div1').addEventListener('click', function() {
+//     console.log('DIV1 clicked!');
+// }, false);
 
 
 
-// removeEventListeners
-// event bubbling & capture
-// BOM
+// document.getElementById('p2').addEventListener('click', function() {
+//     console.log('P2 clicked!');
+// }, true);
 
-// DOM Nodes
-// Creating DOM Nodes
+// document.getElementById('div2').addEventListener('click', function() {
+//     console.log('Div2 clicked');
+// }, true);
 
-// Promises
-// Async JS
+// // document.getElementById('body').addEventListener('click', function() {
+// //     console.log('BODY clicked!');
+// // }, true);
 
-// Objects, Ineritance, OOJS
 
-// closures, currying, hoisting
-// setInterval, setTimeout
-// JS execution context
 
-// Project
+// // let testDiv = document.getElementById('test-div');
+// // testDiv.addEventListener('click', function(e) {
+// //     e.target.innerHTML = 'I was clicked!';
+// // });
+// // testDiv.addEventListener('click', function() {
+// //     console.log('div clicked 2');
+// // });
+// // testDiv.addEventListener('mouseover', function() {
+// //     console.log('mouse over me.. ')
+// // });
+
+
+// // window.addEventListener('resize', function() {
+// //     document.getElementById('test-div').innerHTML = Math.random();
+// // });
+
+// // window.addEventListener('keypress', function(event) {
+// //     console.log(event.key);
+// //     document.getElementById('test-div').innerHTML += event.key;
+// // });
+
+
+
+// // removeEventListeners
+// // event bubbling & capture
+// // BOM
+
+// // DOM Nodes
+// // Creating DOM Nodes
+
+// // Promises
+// // Async JS
+
+// // Objects, Ineritance, OOJS
+
+// // closures, currying, hoisting
+// // setInterval, setTimeout
+// // JS execution context
+
+// // Project
 
 
 

@@ -228,10 +228,38 @@ let add = function (a, b, c) {
 // console.log(addCurry(10));  
 // return value of addCurry(10) -> function B(b) { return a + b};    a = 10;
 
+// closure -> a function remembers the values
+// of variable in its scope
+
+// funciton with its lexical scope
+function outer() {
+    let x = 10;
+    function inner() {
+        console.log(x);
+    }
+    return inner;
+}
+
+let retVal = outer();   // retVal = inner;
+retVal();
+
+
+function makeAdder(x) {
+    return function(y) {
+        return x + y;
+    }
+}
+let add5 = makeAdder(5);
+add5(10);
+let add100 = makeAdder(100);
+add100(10);
 
 
 
-console.log(addCurry(10)(5));
+
+
+
+// console.log(addCurry(10)(5));
 
 
 
