@@ -110,7 +110,7 @@ const f1 = async () => {
 }
 
 
-f1();
+syncF();
 console.log('after f');
 
 // syncF();
