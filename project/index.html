@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #notes-creation-zone, #notes-edit-zone {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .note-div {
+            display: inline-block;
+            width: 200px;
+            background-color: #ffff9f;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .delete-button {
+            background-color: tomato;
+            color: white;
+            width: 48px;
+            height: 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Notes App</h1>
+
+    <div id="notes-creation-zone">
+        <input id="note-title-input" type="text" placeholder="Note Title">
+        <br>
+        <textarea id="note-content-input" placeholder="Note Content"></textarea>  
+        <br>
+        <button id="add-note">Add note</button>  
+    </div>
+
+    
+
+    <!-- <div id="notes-edit-zone">
+        <input id="note-title-edit" type="text" placeholder="Note Title">
+        <br>
+        <textarea id="note-content-edit" placeholder="Note Content"></textarea>  
+        <br>
+        <button id="edit-note">Edit note</button>  
+    </div> -->
+
+    <h2>All your notes</h2>
+
+    <select id="select-sort-by">
+        <option value="title">Title</option>
+        <option value="createdAt">Created At</option>
+    </select>
+
+    <select id="select-sort-by-order">
+        <option value="asc">asc</option>
+        <option value="desc">desc</option>
+    </select>
+
+    <div id="notes-display-zone"></div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+<script>
+
+    function getAllNotes() {
+        let notes = JSON.parse(localStorage.getItem('notes'));
+        if (notes === undefined || notes === null) {
+            notes = [];
+        }
+        return notes;
+    }
+
+    function sortNotesBy(notes, sortBy, sortOrder) {
+        if (sortBy === "title") {
+            notes.sort(function(a, b){
+                return sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
+            });
+        } else if (sortBy === "createdAt") {
+            notes.sort(function(a, b){
+                return sortOrder === "asc" ? a.createdAt - b.createdAt : b.createdAt - a.createdAt;
+            });
+        }
+        return notes;
+    }
+
+    function displayNotes(sortBy = "", sortOrder = "asc") {
+        document.getElementById('notes-display-zone').innerHTML = '';
+        let notes = getAllNotes();
+        if (sortBy !== "") {
+            notes = sortNotesBy(notes, sortBy, sortOrder);
+        }
+        notes.forEach((note, i) => {
+            
+            let noteDiv = document.createElement('div');
+            noteDiv.setAttribute('class', 'note-div');
+
+            let noteHeading = document.createElement('h5');
+            noteHeading.innerText = note.title;
+
+            let noteContent = document.createElement('p');
+            noteContent.innerHTML = note.content;
+
+            let noteCreatedAt = document.createElement('p');
+            noteCreatedAt.innerHTML = note.createdAt.toString();
+
+            let deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-button');
+            deleteButton.innerHTML = 'Delete';
+            deleteButton.addEventListener('click', function() {
+                deleteNote(note.id);
+                displayNotes();
+            });
+
+            let editButton = document.createElement('button');
+            editButton.classList.add('edit-button');
+            editButton.innerHTML = 'Edit';
+            editButton.addEventListener('click', function() {
+
+                // editNote(note.id);
+                // displayNotes();
+            });
+
+            noteDiv.appendChild(noteHeading);
+            noteDiv.appendChild(noteContent);
+            noteDiv.appendChild(noteCreatedAt);
+            noteDiv.appendChild(deleteButton);
+
+            document.getElementById('notes-display-zone').appendChild(noteDiv);
+        });
+    }
+
+    function saveAllNotes(notes) {
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    function deleteNote(noteId) {
+        let notes = getAllNotes();
+        notes = notes.filter(note => note.id !== noteId);
+        saveAllNotes(notes);
+    }
+
+    function saveNoteToLocalStorage(note) {
+        let notes = getAllNotes();
+        notes.push(note);
+        saveAllNotes(notes);
+    }
+
+    function Note(title, content, createdAt = new Date()) {
+        this.id = uuidv4();
+        this.title = title;
+        this.content = content;
+        this.createdAt = createdAt;
+    }
+
+    document.getElementById('add-note').addEventListener("click", function (params) {
+        let noteTitle = document.getElementById('note-title-input').value;
+        let noteContent = document.getElementById('note-content-input').value;
+        let note = new Note(noteTitle, noteContent);
+        saveNoteToLocalStorage(note);
+        displayNotes();
+    });
+
+    document.getElementById('select-sort-by').addEventListener('change', function(e) {
+        displayNotes(e.target.value, document.getElementById('select-sort-by-order').value);
+    })
+
+    document.getElementById('select-sort-by-order').addEventListener('change', function(e) {
+        displayNotes(document.getElementById('select-sort-by').value, e.target.value);
+    })
+
+    displayNotes();
+
+
+</script>
+
+</html>
