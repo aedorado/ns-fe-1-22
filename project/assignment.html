@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1, #div2, #div3, #div4, #div5, #div6{
+		  float: left;
+		  width:85px;
+		  height:85px;
+		  margin: 20px; 
+		  padding: 0px;
+		  border: 1px solid black;
+		}
+
+        img {
+            height: 85px;
+            width: 85px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/1.jpg" ondragstart="dragStarted(event)" draggable="true" alt="" id="drag1">
+    </div>
+    <div id="div2" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/2.jpg" ondragstart="dragStarted(event)" draggable="true" alt="" id="drag2">
+    </div>
+    <div id="div3" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/3.jpg" ondragstart="dragStarted(event)" draggable="true" alt="" id="drag3">
+    </div>
+    <div id="div4" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/4.jpg" ondragstart="dragStarted(event)" draggable="true" alt="" id="drag4">
+    </div>
+    <div id="div5" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/5.jpg" draggable="true" alt="" id="drag5">
+    </div>
+    <div id="div6" ondragover="allowDrop(event)" ondrop="dropImage(event)">
+        <img src="images/6.jpg" draggable="true" alt="" id="drag6">
+    </div>
+</body>
+
+<script>
+
+// ondrop
+// ondragstart
+// ondragover
+// att -> draggable
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+
+function dragStarted(e) {
+    e.dataTransfer.setData("dragid", e.target.id);
+    e.dataTransfer.setData("parid", e.target.parentElement.id);
+}
+
+function dropImage(e) {
+    e.preventDefault();
+    console.log('drop ', e.target);
+    let dragId = e.dataTransfer.getData("dragid");
+    let parId = e.dataTransfer.getData("parid");
+    e.target.parentElement.appendChild(document.getElementById(dragId));
+    document.getElementById(parId).appendChild(e.target);
+}
+
+// function dragover(e) {
+//     console.log(e);
+// }
+
+
+
+</script>
+
+
+</html>
