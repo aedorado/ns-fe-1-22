@@ -97,12 +97,14 @@ const f = async () => {
     }
 }
 
+let globalJS;
 const f1 = async () => {
     try {
         let resp = await fetch('https://dummyjson.com/products/1');
         console.log(resp);
         let js = await resp.json();
         console.log(js);
+        globalJS = js;
         // document.getElementById('id') = js.title 
     } catch (e) {
         console.log(e);
